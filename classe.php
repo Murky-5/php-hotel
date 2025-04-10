@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>php-hotel</title>
   </head>
+  <form action="classe.php" method="GET">
+        <button name="parcheggio" type="submit">🚗</button>
+</form>
   <?php
-
+  $submit = isset($_GET["parcheggio"]) ? true : false;
    $hotels = [
 
        [
@@ -48,9 +51,17 @@
 
    foreach($hotels as $hotel) {
     foreach($hotel as $key => $value) {
+      if ($key == "parking" && $value == false) {
+        echo $key . ": " . $value . "</br>";
+      } elseif ($key == "parking" && $value == $submit) {
+        echo $hotel['name'] . "</br>";
+        echo $hotel['description'] . "</br>";
+        echo "parcheggio: 👍 </br>";
+        echo "Voto: " . $hotel['vote'] . "</br>";
+        echo "Distanza dal centro: " . $hotel['distance_to_center'] . "</br> </br>";
+      } elseif ($submit == false) {
       echo $key . ": " . $value . "</br>";
-    };
-    echo "</br>";
+    };};
    };
   
   ?>
