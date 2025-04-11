@@ -4,10 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>php-hotel</title>
+    <style>
+      body {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+      form {
+        position: sticky;
+        top: 100px;
+        left: calc(50% - 409.92/2);
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-bottom: 70px;
+        background: grey;
+        display: flex;
+      }
+      label {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: sans-serif;
+        margin: 25px 5px 25px 20px;
+      }
+      input {
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 25px 5px 25px 20px;
+      }
+      input:nth-child(2) {
+        width: 15px;
+        height: 15px;
+      }
+      hr {
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 2px);
+        border: 1px solid lightgrey;
+        margin: 0 20px;
+      }
+      button {
+        padding: 0 10px;
+        border-radius: 5px;
+        border: none;
+        background-color:rgba(34, 33, 33, 0.78);
+        color: white;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      </style>
   </head>
   <form action="classe.php" method="GET">
     <label for="parcheggio">Parcheggio</label>
     <input type="checkbox" name="parcheggio" id="parcheggio" value="true" />
+    <hr>
     <label for="stelle">stelle</label>
     <input type="number" placeholder="1-5" min="1" max="5" name="stelle" id="stelle" value="true" />
     <button type="submit">GO!</button>
